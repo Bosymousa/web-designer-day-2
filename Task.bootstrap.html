@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feane</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    
+
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 60vh;
+    padding: 20px 10px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .btn-order {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .food-img {
+    height: 150px;
+  }
+
+  .food-title {
+    font-size: 1rem;
+  }
+
+  .food-price {
+    font-size: 1rem;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .food-img {
+    height: 170px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-desc {
+    font-size: 1.3rem;
+  }
+
+  .food-img {
+    height: 230px;
+  }
+}
+
+        :root {
+            --primary-color: #ffbe33;
+            --secondary-color: #222831;
+            --text-color: #ffffff;
+            --background-dark: #1c2026;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            color: var(--text-color);
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-color);
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./borg.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-order {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .btn-order:hover {
+            background-color: #e69b00;
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto;
+        }
+        
+        .food-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            background: white;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .food-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .food-card-body {
+            padding: 20px;
+        }
+        
+        .food-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .food-desc {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .food-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .about-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .footer {
+            background-color: var(--background-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .opening-hours {
+            color: #ccc;
+        }
+        
+        .contact-info {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+        
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Feane</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><Menu></Menu></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Abour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book Table</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0 text-center">
+                    <button class="btn btn-order">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="hero-title">Fast Food Restaurant</h1>
+                    <p class="hero-desc"> <br></br>
+
+Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam. </p>
+                    <button class="btn btn-order">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="food-menu py-5">
+        <div class="container">
+            <h2 class="section-title"></h2>
+            <div class="row">
+               
+                <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f1.png" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <h3 class="food-title">Delicious Pizza</h3>
+                            <p class="food-desc"> 
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">20$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f6.png" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <p class="food-desc"> 
+                            <h3 class="food-title">Delicious Pizza</h3>
+                            <p class="food-desc" Delicious Pizza>
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">15$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="bet.jpg" class="food-img" alt=" ">
+                        <div class="food-card-body">
+                            <h3 class="food-title">Delicious Pizza</h3>
+                            <p class="food-desc">Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">15$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f4.png" class="food-img" alt=" ">
+                        <div class="food-card-body">
+                            <h3 class="food-title"> Delicious Pasta</h3>
+                            <p class="food-desc">
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">18$</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- عنصر قائمة 2 -->
+                <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f8.png" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <h3 class="food-title">Tasty Burger</h3>
+                            <p class="food-desc"> 
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">14$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f5.png" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <h3 class="food-title"> French Fries</h3>
+                            <p class="food-desc"> 
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">10$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="f2.png" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <h3 class="food-title">Tasty Burger</h3>
+                            <p class="food-desc"> 
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+</p>
+                            <p class="food-price">14$</p>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1352&q=80" class="food-img" alt="برجر لحم">
+                        <div class="food-card-body">
+                            <h3 class="food-title">Tasty Burger</h3>
+                            <p class="food-desc"> 
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">12$</p>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="col-md-4">
+                    <div class="food-card">
+                        <img src="mac.jpg" class="food-img" alt="">
+                        <div class="food-card-body">
+                            <h3 class="food-title"> Delicious Pasta</h3>
+                            <p class="food-desc">
+
+Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque </p>
+                            <p class="food-price">10$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./boo.png" class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title text-white"></h2>
+                    <p>We Are Feane</p>
+
+
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All </p>
+                    <p></p>
+                    <button class="btn btn-order">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="section-title">What Says Our Customers </h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                                              <img src="client2.jpg" class="food-img" alt="">
+                        
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quo? Quis enim suscipit nam dolorum facere culpa. Minus ut atque cumque vero in. Quasi officia, sunt eveniet iure sed eligendi.</p>
+                        <p class="client-name">Mike Hamell</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="client1.jpg" class="food-img" alt="">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dignissimos perferendis ullam perspiciatis velit dolorem. Tenetur eligendi iure tempora enim? Corrupti, libero iusto. Ut, molestias asperiores! Explicabo molestias distinctio minima!</p>
+                        <p class="client-name">Jony Dere</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="client2.jpg" class="food-img" alt="">
+                        <p class="testimonial-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus error temporibus fugit animi dolorem quis fuga facere? Sunt eligendi et odit magnam accusantium consequatur non. Tempore odit maxime dolore eum!</p>
+                        <p class="client-name">Samy Robe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+
+
+
+
+
+</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Location</p>
+                        <p><i class="fas fa-phone"></i>
+
+Call +01 1234567890
+</p>
+                        <p><i class="fas fa-envelope"></i> demo@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title"></h3>
+                    <div class="opening-hours">
+                        <p>
+Contact Us</p>
+<p>Location</p>
+                        </p>Call +01 1234567890</p>
+
+</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">Feane</h3>
+                    <p>
+
+
+Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
